@@ -1,7 +1,6 @@
 # flake8: noqa
 import os
 from pathlib import Path
-from distutils.util import strtobool
 
 from dotenv import load_dotenv
 
@@ -9,11 +8,11 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', default='token')
 
-DEBUG = bool(strtobool(os.getenv('DEBUG', 'False')))
+DEBUG = os.getenv('DEBUG', default=False)
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,vlados684.ddns.net').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,Wkittygram.ddns.net').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
