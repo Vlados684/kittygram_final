@@ -1,7 +1,6 @@
 # flake8: noqa
 import os
 from pathlib import Path
-from distutils.util import strtobool
 
 from dotenv import load_dotenv
 
@@ -13,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='token')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['vlados684.ddns.net']
+ALLOWED_HOSTS = ['vlados684.ddns.net', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
